@@ -1,17 +1,19 @@
 <p align="center">
-    <a href="https://www.kituranext.org/packages.html#all">
-    <img src="https://img.shields.io/badge/docs-kitura-1FBCE4.svg" alt="APIDoc">
-    </a>
-    <a href="https://travis-ci.org/Kitura-Next/BlueSSLService">
-    <img src="https://travis-ci.org/Kitura-Next/BlueSSLService.svg?branch=master" alt="Build Status - Master">
-    </a>
-    <img src="https://img.shields.io/badge/os-macOS-green.svg?style=flat" alt="macOS">
-    <img src="https://img.shields.io/badge/os-iOS-green.svg?style=flat" alt="iOS">
-    <img src="https://img.shields.io/badge/os-linux-green.svg?style=flat" alt="Linux">
+<a href="http://kituranext.org/">
+<img src="https://raw.githubusercontent.com/Kitura-Next/Kitura/master/Sources/Kitura/resources/kitura-bird.svg?sanitize=true" height="100" alt="Kitura">
+</a>
+</p>
+
+<p align="center">
+    <a href="https://www.kituranext.org/learn/">
+    <img src="https://img.shields.io/badge/docs-kitura-1FBCE4.svg" alt="APIDoc"></a>
+    <a href="https://github.com/Kitura-Next/LoggerAPI/actions?query=workflow%3ASwift+MacOS">
+    <img src="https://github.com/Kitura-Next/LoggerAPI/workflows/Swift%20MacOS/badge.svg"></a>
+    <a href="https://github.com/Kitura-Next/LoggerAPI/actions?query=workflow%3ASwift+Ubuntu">
+    <img src="https://github.com/Kitura-Next/LoggerAPI/workflows/Swift%20Ubuntu/badge.svg"></a>
     <img src="https://img.shields.io/badge/license-Apache2-blue.svg?style=flat" alt="Apache 2">
     <a href="http://swift-at-ibm-slack.mybluemix.net/">
-    <img src="http://swift-at-ibm-slack.mybluemix.net/badge.svg" alt="Slack Status">
-    </a>
+    <img src="http://swift-at-ibm-slack.mybluemix.net/badge.svg" alt="Slack Status"></a>
 </p>
 
 # BlueSSLService
@@ -20,29 +22,19 @@ SSL/TLS Add-in framework for [BlueSocket](https://github.com/Kitura-Next/BlueSoc
 
 ## Prerequisites
 
-### Swift
-
-* Swift Open Source `swift-4.0.0-RELEASE` toolchain (**Minimum REQUIRED for latest release**)
-* Swift Open Source `swift-4.2-RELEASE` toolchain (**Recommended**)
-* Swift toolchain included in *Xcode Version 10.0 (10A255) or higher*.
+## Swift version
+Requires **Swift 5.1** or newer. You can download the Swift binaries by following this [link](https://swift.org/download/).  
+Compatibility with other Swift versions is not guaranteed.
 
 ### macOS
 
-* macOS 10.11.6 (*El Capitan*) or higher.
-* Xcode Version 9.0 (9A325) or higher using one of the above toolchains.
-* Xcode Version 10.0 (10A255) or higher using the included toolchain (*Recommended*).
+* macOS 10.14 or higher.
+* Xcode Version 11.3 or higher using the included toolchain.
 * Secure Transport is provided by macOS.
-
-### iOS
-
-* iOS 10.0 or higher
-* Xcode Version 9.0 (9A325) or higher using one of the above toolchains.
-* Xcode Version 10.0 (10A255) or higher using the included toolchain (*Recommended*).
-* Secure Transport is provided by iOS.
 
 ### Linux
 
-* Ubuntu 16.04 (or 16.10 but only tested on 16.04) and 18.04.
+* Ubuntu tested on 18.04.
 * One of the Swift Open Source toolchain listed above.
 * OpenSSL is provided by the distribution.  **Note:** 1.0.x, 1.1.x and later releases of OpenSSL are supported.
 * The appropriate **libssl-dev** package is required to be installed when building.
