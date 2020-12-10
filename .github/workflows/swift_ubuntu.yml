@@ -1,28 +1,26 @@
-name: Jazzy_Docs
-env:
-  KITURA_NEXT: ${{ secrets.KITURA_NEXT }}
-  USER_NAME: ${{ secrets.USER_NAME }}
-  USER_EMAIL: ${{ secrets.USER_EMAIL }}
+name: Swift Ubuntu
 
 on:
   push:
-    branches: [ master ] # To update docs - add 'ci generate docs' to the merge commit message.
+  pull_request:
+    branches: [ master ]
 
 jobs:
-  generate-docs:
-    if: "contains(github.event.head_commit.message, 'ci generate docs')"
-    runs-on: macos-latest
+  ubuntu-swift:
+    runs-on: ubuntu-18.04
+    strategy:
+      fail-fast: false
+      matrix:
+        swift_version: [5.1.5-bionic, 5.2.3-bionic, 5.3.1-bionic]
+
+    container: swift:${{ matrix.swift_version }}
     steps:
-      - uses: actions/checkout@v2
-      - name: install gh-pages
-        run:  |
-          npm install -g gh-pages
-      - name: install jazzy
-        run:  |
-          gem install jazzy
-      - name: create docs
-        run:  |
-          git config --global user.name "${USER_NAME}"
-          git config --global user.email "${USER_EMAIL}"
-          jazzy --theme fullwidth --module CryptorRSA  <-- NOTE: update module name!! *** --swift-build-tool spm ***
-          npm run deploy
+    - uses: actions/checkout@v2
+    - name: Swift Version
+      run: swift --version
+    - name: Install depends
+      run: apt-get update && apt-get install -y libcurl4-openssl-dev libssl-dev
+    - name: Build
+      run: swift build
+    - name: Test
+      run: swift test --enable-test-discovery
